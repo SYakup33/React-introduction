@@ -8,11 +8,7 @@ export const Card = (props) => {
         <a href={`mailto:${props.email}`}> {props.email}</a>
       </td>
       <td>
-        <img
-          className="img"
-          src={`https://robohash.org/${props.avatar}.png?size=150x150&set=set2`}
-          alt=""
-        />
+        <img className="img" src={props.avatar} alt="" />
       </td>
       <td>
         <a className="btn btn-primary" href="#!">

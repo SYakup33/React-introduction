@@ -1,23 +1,23 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export const Form = () => {
+export const Form = (props) => {
   const [prenom, setPrenom] = useState("");
   const [nom, setNom] = useState("");
   const [email, setEmail] = useState("");
   // Fonction qui envoie le formulaire
   const submit = (evt) => {
     evt.preventDefault();
-    console.log(prenom, nom, email);
     // Chaque employé est un objet
     const newEmp = {
       id: uuidv4(),
       prenom: prenom,
       nom: nom,
       email: email,
-      avatar: `https://robohash.org/${prenom + nom}.png?size=100x100&set=set1`,
+      image: `https://robohash.org/${prenom + nom}.png?size=100x100&set=set4`,
     };
     console.log(newEmp);
+    props.ajoutEmploye([newEmp, ...props.myNewEmploye]);
   };
   return (
     // <form onSubmit={(evt) => submit(evt)}>
